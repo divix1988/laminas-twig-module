@@ -1,0 +1,41 @@
+{
+    "name": "divix1988/laminas-twig-module",
+    "description": "Laminas Module that provides a Twig rendering strategy and extensions to render actions or trigger events from your templates",
+    "type": "library",
+    "keywords": [
+        "twig",
+        "module",
+        "zf2"
+    ],
+    "homepage": "http://www.github.com/divix1988/laminas-twig-module/",
+    "authors": [
+        {
+            "name": "Kyle Spraggs",
+            "email": "theman@spiffyjr.me",
+            "homepage": "http://www.spiffyjr.me/"
+        },
+        {
+            "name": "Cosmin Harangus",
+            "email": "cosmin@zendexperts.com",
+            "homepage": "http://www.zendexperts.com/"
+        },
+		{
+			"name": "Adam Omelak",
+			"email": "divix1988@gmail.com",
+			"homepage": "http://omelak.com"
+		}
+    ],
+    "require": {
+        "php": "^7.1",
+        "twig/twig": "~1.13"
+    },
+
+    "autoload": {
+        "psr-0": {
+            "LaminasTwig\\": "src/"
+        }
+    },
+    "require-dev": {
+        "laminas/laminas-view": "*"
+    }
+}
