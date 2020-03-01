@@ -5,7 +5,7 @@
     "keywords": [
         "twig",
         "module",
-        "zf2"
+        "laminas"
     ],
     "homepage": "http://www.github.com/divix1988/laminas-twig-module/",
     "authors": [
@@ -27,7 +27,7 @@
     ],
     "require": {
         "php": "^7.1",
-        "twig/twig": "~1.13"
+        "twig/twig": "^3.0"
     },
 
     "autoload": {
