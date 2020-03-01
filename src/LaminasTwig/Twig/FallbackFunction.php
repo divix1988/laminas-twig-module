@@ -2,10 +2,10 @@
 
 namespace LaminasTwig\Twig;
 
-use Twig_Function;
+use Twig\Function;
 use Laminas\View\Helper\HelperInterface;
 
-class FallbackFunction extends Twig_Function
+class FallbackFunction extends Twig\Function
 {
     /**
      * @var HelperInterface

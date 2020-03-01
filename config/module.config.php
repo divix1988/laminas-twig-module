@@ -11,7 +11,7 @@ return array(
         /**
          * Optional class name override for instantiating the Twig Environment in the factory.
          */
-        'environment_class' => 'Twig_Environment',
+        'environment_class' => 'Twig\Environment',
 
         /**
          * Options that are passed directly to the Twig_Environment.
@@ -62,7 +62,7 @@ return array(
          */
         'helper_manager' => array(
             'configs' => array(
-                'Zend\Navigation\View\HelperConfig'
+                'Laminas\Navigation\View\HelperConfig'
             )
         )
     ),

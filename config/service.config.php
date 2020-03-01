@@ -3,7 +3,7 @@
 return array(
     'aliases' => array(
         'LaminasTwigExtension'               => 'LaminasTwig\Twig\Extension',
-        'LaminasTwigLoaderChain'             => 'Twig_Loader_Chain',
+        'LaminasTwigLoaderChain'             => 'Twig\Loader\Chain',
         'LaminasTwigLoaderTemplateMap'       => 'LaminasTwig\Twig\MapLoader',
         'LaminasTwigLoaderTemplatePathStack' => 'LaminasTwig\Twig\StackLoader',
         'LaminasTwigRenderer'                => 'LaminasTwig\View\TwigRenderer',
@@ -13,8 +13,8 @@ return array(
     ),
 
     'factories' => array(
-        'Twig_Environment'  => 'LaminasTwig\Twig\EnvironmentFactory',
-        'Twig_Loader_Chain' => 'LaminasTwig\Twig\ChainLoaderFactory',
+        'Twig\Environment'  => 'LaminasTwig\Twig\EnvironmentFactory',
+        'Twig\Loader\Chain' => 'LaminasTwig\Twig\ChainLoaderFactory',
 
         'LaminasTwig\Twig\Extension' => 'LaminasTwig\Twig\ExtensionFactory',
         'LaminasTwig\Twig\MapLoader' => 'LaminasTwig\Twig\MapLoaderFactory',

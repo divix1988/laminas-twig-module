@@ -2,8 +2,8 @@
 
 namespace LaminasTwig\View;
 
-use Twig_Environment;
-use Twig_Error_Loader;
+use Twig\Environment;
+use Twig\Error\Loader;
 use Laminas\EventManager\EventManagerInterface;
 use Laminas\EventManager\ListenerAggregateInterface;
 use Laminas\Http\Response;
@@ -12,7 +12,7 @@ use Laminas\View\Model\ViewModel;
 
 /**
  * @category   Laminas
- * @package    Zend_Mvc
+ * @package    Laminas\Mvc
  * @subpackage View
  */
 class RenderingStrategy implements ListenerAggregateInterface
@@ -58,14 +58,14 @@ class RenderingStrategy implements ListenerAggregateInterface
      * @param Twig_Environment $environment
      * @return RenderingStrategy
      */
-    public function setEnvironment(Twig_Environment $environment)
+    public function setEnvironment(Twig\Environment $environment)
     {
         $this->environment = $environment;
         return $this;
     }
 
     /**
-     * @return Twig_Environment
+     * @return Twig\Environment
      */
     public function getEnvironment()
     {
@@ -97,7 +97,7 @@ class RenderingStrategy implements ListenerAggregateInterface
                 $viewModel->getTemplate() . $this->getSuffix(),
                 (array) $viewModel->getVariables()
             );
-        } catch (Twig_Error_Loader $e) {
+        } catch (Twig\Error\Loader $e) {
             return null;
         }
 

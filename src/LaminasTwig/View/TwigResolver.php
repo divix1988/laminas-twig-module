@@ -2,22 +2,22 @@
 
 namespace LaminasTwig\View;
 
-use Twig_Environment;
-use Twig_Error_Loader;
+use Twig\Environment;
+use Twig\Error\Loader;
 use Laminas\View\Resolver\ResolverInterface;
 use Laminas\View\Renderer\RendererInterface as Renderer;
 
 class TwigResolver implements ResolverInterface
 {
     /**
-     * @var Twig_Environment
+     * @var Twig\Environment
      */
     protected $environment;
 
     /**
      * Constructor.
      *
-     * @param Twig_Environment $environment
+     * @param Twig\Environment $environment
      */
     public function __construct(Twig_Environment $environment)
     {

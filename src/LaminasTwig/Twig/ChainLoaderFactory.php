@@ -3,7 +3,7 @@
 namespace LaminasTwig\Twig;
 
 use InvalidArgumentException;
-use Twig_Loader_Chain;
+use Twig\Loader\Chain;
 use Laminas\ServiceManager\FactoryInterface;
 use Laminas\ServiceManager\ServiceLocatorInterface;
 
@@ -14,7 +14,7 @@ class ChainLoaderFactory implements FactoryInterface
      *
      * @param ServiceLocatorInterface $serviceLocator
      * @throws \InvalidArgumentException
-     * @return Twig_Loader_Chain
+     * @return Twig\Loader\Chain
      */
     public function createService(ServiceLocatorInterface $serviceLocator)
     {
@@ -22,7 +22,7 @@ class ChainLoaderFactory implements FactoryInterface
         $options = $serviceLocator->get('LaminasTwig\ModuleOptions');
 
         // Setup loader
-        $chain = new Twig_Loader_Chain();
+        $chain = new Twig\Loader\Chain();
 
         foreach ($options->getLoaderChain() as $loader) {
             if (!is_string($loader) || !$serviceLocator->has($loader)) {

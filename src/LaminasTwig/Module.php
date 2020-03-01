@@ -16,7 +16,7 @@ class Module implements
         /** @var \Zend\Mvc\MvcEvent $e*/
         $application    = $e->getApplication();
         $serviceManager = $application->getServiceManager();
-        $environment    = $serviceManager->get('Twig_Environment');
+        $environment    = $serviceManager->get('Twig\Environment');
 
         /** @var \LaminasTwig\moduleOptions $options */
         $options = $serviceManager->get('LaminasTwig\ModuleOptions');

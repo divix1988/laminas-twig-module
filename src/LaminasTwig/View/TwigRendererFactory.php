@@ -20,8 +20,8 @@ class TwigRendererFactory implements FactoryInterface
 
         $renderer = new TwigRenderer(
             $serviceLocator->get('Laminas\View\View'),
-            $serviceLocator->get('Twig_Loader_Chain'),
-            $serviceLocator->get('Twig_Environment'),
+            $serviceLocator->get('Twig\Loader\Chain'),
+            $serviceLocator->get('Twig\Environment'),
             $serviceLocator->get('LaminasTwig\View\TwigResolver')
         );
 

@@ -2,11 +2,11 @@
 
 namespace LaminasTwig\Twig;
 
-use Twig_Error_Loader;
-use Twig_ExistsLoaderInterface;
-use Twig_LoaderInterface;
+use Twig\Error\Loader;
+use Twig\ExistsLoaderInterface;
+use Twig\LoaderInterface;
 
-class MapLoader implements Twig_ExistsLoaderInterface, Twig_LoaderInterface
+class MapLoader implements Twig\ExistsLoaderInterface, Twig\LoaderInterface
 {
     /**
      * Array of templates to filenames.
@@ -19,13 +19,13 @@ class MapLoader implements Twig_ExistsLoaderInterface, Twig_LoaderInterface
      *
      * @param string $name
      * @param string $path
-     * @throws \Twig_Error_Loader
+     * @throws \Twig\Error\Loader
      * @return MapLoader
      */
     public function add($name, $path)
     {
         if ($this->exists($name)) {
-            throw new Twig_Error_Loader(sprintf(
+            throw new Twig\Error\Loader(sprintf(
                 'Name "%s" already exists in map',
                 $name
             ));
@@ -48,7 +48,7 @@ class MapLoader implements Twig_ExistsLoaderInterface, Twig_LoaderInterface
     public function getSource($name)
     {
         if (!$this->exists($name)) {
-            throw new Twig_Error_Loader(sprintf(
+            throw new Twig\Error\Loader(sprintf(
                 'Unable to find template "%s" from template map',
                 $name
             ));

@@ -3,7 +3,7 @@
 namespace LaminasTwig\Twig;
 
 use RuntimeException;
-use Twig_Environment;
+use Twig\Environment;
 use Laminas\ServiceManager\FactoryInterface;
 use Laminas\ServiceManager\ServiceLocatorInterface;
 
@@ -11,7 +11,7 @@ class EnvironmentFactory implements FactoryInterface
 {
     /**
      * @param ServiceLocatorInterface $serviceLocator
-     * @return \Twig_Environment
+     * @return \Twig\Environment
      * @throws \RuntimeException
      */
     public function createService(ServiceLocatorInterface $serviceLocator)
@@ -20,7 +20,7 @@ class EnvironmentFactory implements FactoryInterface
         $options  = $serviceLocator->get('LaminasTwig\ModuleOptions');
         $envClass = $options->getEnvironmentClass();
 
-        /** @var \Twig_Environment $env */
+        /** @var \Twig\Environment $env */
         $env = new $envClass(null, $options->getEnvironmentOptions());
 
         if ($options->getEnableFallbackFunctions()) {

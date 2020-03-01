@@ -2,8 +2,8 @@
 
 namespace LaminasTwig\View;
 
-use Twig_Environment;
-use Twig_Loader_Chain;
+use Twig\Environment;
+use Twig\Loader\Chain;
 use Laminas\View\Exception;
 use Laminas\View\HelperPluginManager;
 use Laminas\View\Model\ModelInterface;
@@ -20,7 +20,7 @@ class TwigRenderer implements RendererInterface, TreeRendererInterface
     protected $canRenderTrees = true;
 
     /**
-     * @var Twig_Environment
+     * @var Twig\Environment
      */
     protected $environment;
 
@@ -46,14 +46,14 @@ class TwigRenderer implements RendererInterface, TreeRendererInterface
 
     /**
      * @param View $view
-     * @param \Twig_Loader_Chain $loader
-     * @param Twig_Environment $environment
+     * @param \Twig\Loader\Chain $loader
+     * @param Twig\Environment $environment
      * @param TwigResolver $resolver
      */
     public function __construct(
         View $view,
-        Twig_Loader_Chain $loader,
-        Twig_Environment $environment,
+        Twig\Loader\Chain $loader,
+        Twig\Environment $environment,
         TwigResolver $resolver
     ) {
         $this->environment = $environment;
@@ -137,7 +137,7 @@ class TwigRenderer implements RendererInterface, TreeRendererInterface
      * phplib, etc, return the template engine object. Useful for calling
      * methods on these objects, such as for setting filters, modifiers, etc.
      *
-     * @return Twig_Environment
+     * @return Twig\Environment
      */
     public function getEngine()
     {
