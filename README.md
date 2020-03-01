@@ -6,7 +6,7 @@ LaminasTwig is a module that integrates the [Twig](http://twig.sensiolabs.org) t
 ## Installation
 
  1. Run `composer require divix1988/laminas-twig-module` in your cmd
- 2. Add `LaminasTwig` to your `config/application.config.php` file under the `modules` key.
+ 2. Add `LaminasTwig` to your `config/modules.config.php` list.
 
 ## Configuration
 
