@@ -2,11 +2,11 @@
 return array(
     'laminastwig' => array(
         /**
-         * Service manager alias of the loader to use with Laminaswig. By default, it uses
+         * Service manager alias of the loader to use with LaminasTwig. By default, it uses
          * the included LaminasTwigLoaderChain which includes a copy of ZF2's TemplateMap and
          * TemplatePathStack.
          */
-        'environment_loader' => 'LaminaswigLoaderChain',
+        'environment_loader' => 'LaminasTwigLoaderChain',
 
         /**
          * Optional class name override for instantiating the Twig Environment in the factory.
@@ -21,19 +21,19 @@ return array(
         /**
          * Service manager alias of any additional loaders to register with the chain. The default
          * has the TemplateMap and TemplatePathStack registered. This setting only has an effect
-         * if the `environment_loader` key above is set to LaminaswigLoaderChain.
+         * if the `environment_loader` key above is set to LaminasTwigLoaderChain.
          */
         'loader_chain' => array(
-            'LaminaswigLoaderTemplateMap',
-            'LaminaswigLoaderTemplatePathStack'
+            'LaminasTwigLoaderTemplateMap',
+            'LaminasTwigLoaderTemplatePathStack'
         ),
 
         /**
-         * Service manager alias or fully qualified domain name of extensions. LaminaswigExtension
+         * Service manager alias or fully qualified domain name of extensions. LaminasTwigExtension
          * is required for this module to function!
          */
         'extensions' => array(
-            'laminastwig' => 'LaminaswigExtension'
+            'laminastwig' => 'LaminasTwigExtension'
         ),
 
         /**
@@ -56,7 +56,7 @@ return array(
         'disable_zf_model' => true,
 
         /**
-         * Laminaswig uses it's own HelperPluginManager to avoid renderer conflicts with the PhpRenderer. You must register
+         * LaminasTwig uses it's own HelperPluginManager to avoid renderer conflicts with the PhpRenderer. You must register
          * any view helpers in this array that require access to the renderer. The defaults from ZF2 (navigation,
          * partial, etc.) are done for you.
          */
@@ -76,6 +76,6 @@ return array(
      * Register the view strategy with the view manager. This is required!
      */
     'view_manager' => array(
-        'strategies' => array('LaminaswigViewStrategy')
+        'strategies' => array('LaminasTwigViewStrategy')
     )
 );
