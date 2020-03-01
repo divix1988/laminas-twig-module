@@ -25,7 +25,7 @@ class MapLoader implements Twig\ExistsLoaderInterface, Twig\LoaderInterface
     public function add($name, $path)
     {
         if ($this->exists($name)) {
-            throw new Twig\Error\Loader(sprintf(
+            throw new \Twig\Error\Loader(sprintf(
                 'Name "%s" already exists in map',
                 $name
             ));
@@ -48,7 +48,7 @@ class MapLoader implements Twig\ExistsLoaderInterface, Twig\LoaderInterface
     public function getSource($name)
     {
         if (!$this->exists($name)) {
-            throw new Twig\Error\Loader(sprintf(
+            throw new \Twig\Error\Loader(sprintf(
                 'Unable to find template "%s" from template map',
                 $name
             ));

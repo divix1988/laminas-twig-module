@@ -61,7 +61,7 @@ class StackLoader extends Twig\Loader\Filesystem
         $namespace = '__main__';
         if (isset($name[0]) && '@' == $name[0]) {
             if (false === $pos = strpos($name, '/')) {
-                throw new Twig\Error\Loader(sprintf('Malformed namespaced template name "%s" (expecting "@namespace/template_name").', $name));
+                throw new \Twig\Error\Loader(sprintf('Malformed namespaced template name "%s" (expecting "@namespace/template_name").', $name));
             }
 
             $namespace = substr($name, 1, $pos - 1);
@@ -70,7 +70,7 @@ class StackLoader extends Twig\Loader\Filesystem
         }
 
         if (!isset($this->paths[$namespace])) {
-            throw new Twig\Error\Loader(sprintf('There are no registered paths for namespace "%s".', $namespace));
+            throw new \Twig\Error\Loader(sprintf('There are no registered paths for namespace "%s".', $namespace));
         }
 
         foreach ($this->paths[$namespace] as $path) {
@@ -79,6 +79,6 @@ class StackLoader extends Twig\Loader\Filesystem
             }
         }
 
-        throw new Twig\Error\Loader(sprintf('Unable to find template "%s" (looked into: %s).', $name, implode(', ', $this->paths[$namespace])));
+        throw new \Twig\Error\Loader(sprintf('Unable to find template "%s" (looked into: %s).', $name, implode(', ', $this->paths[$namespace])));
     }
 }

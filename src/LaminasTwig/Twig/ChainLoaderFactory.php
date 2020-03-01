@@ -22,7 +22,7 @@ class ChainLoaderFactory implements FactoryInterface
         $options = $serviceLocator->get('LaminasTwig\ModuleOptions');
 
         // Setup loader
-        $chain = new Twig\Loader\Chain();
+        $chain = new \Twig\Loader\Chain();
 
         foreach ($options->getLoaderChain() as $loader) {
             if (!is_string($loader) || !$serviceLocator->has($loader)) {
