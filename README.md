@@ -1,4 +1,4 @@
-# Twig integration Module for Laminas
+# WIP -[ unfinished component] Twig integration Module for Laminas
 
 LaminasTwig is a module that integrates the [Twig](http://twig.sensiolabs.org) templating engine with
 [Laminas](http://getlaminas.org).
