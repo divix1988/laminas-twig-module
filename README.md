@@ -1,4 +1,5 @@
-# WIP -[ unfinished component] Twig integration Module for Laminas
+# WIP -[unfinished component]  
+Twig integration Module for Laminas
 
 LaminasTwig is a module that integrates the [Twig](http://twig.sensiolabs.org) templating engine with
 [Laminas](http://getlaminas.org).
@@ -68,7 +69,7 @@ public function getServiceConfiguration()
 
 ### Using Laminas View Helpers
 
-Using Laminas view helpers is supported through the [LaminasTwig\Twig\FallbackFunction](https://github.com/divix1988/laminas-twig-module/tree/master/src/ZfcTwig/FallbackFunction.php)
+Using Laminas view helpers is supported through the [LaminasTwig\Twig\FallbackFunction](https://github.com/divix1988/laminas-twig-module/tree/master/src/LaminasTwig/FallbackFunction.php)
 function.
 
 ```twig
@@ -84,11 +85,6 @@ function.
 {# Combining view helpers #}
 {% set url = ( url('my/custom/route') ) %}
 ```
-
-# Examples
-
-Example .twig files for the skeleton application can be found in the [examples](https://github.com/divix1988/laminas-twig-module/tree/master/examples)
-folder.
 
 ## Gotchas
 
