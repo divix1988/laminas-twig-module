@@ -52,8 +52,8 @@ class TwigRenderer implements RendererInterface, TreeRendererInterface
      */
     public function __construct(
         View $view,
-        Twig\Loader\Chain $loader,
-        Twig\Environment $environment,
+        \Twig\Loader\ChainLoader $loader,
+        \Twig\Environment $environment,
         TwigResolver $resolver
     ) {
         $this->environment = $environment;
@@ -186,7 +186,10 @@ class TwigRenderer implements RendererInterface, TreeRendererInterface
     public function render($nameOrModel, $values = array())
     {
         $model = null;
-
+        error_reporting(\E_ALL);
+new \LaminasTwig\View\TwigViewModel($this->environment);
+//exit('after');
+//exit('render');
         if ($nameOrModel instanceof ModelInterface) {
             $model       = $nameOrModel;
             $nameOrModel = $model->getTemplate();
@@ -211,6 +214,7 @@ class TwigRenderer implements RendererInterface, TreeRendererInterface
             foreach($model as $child) {
                 /** @var \Laminas\View\Model\ViewModel $child */
                 if ($this->canRender($child->getTemplate())) {
+
                     $template = $this->resolver->resolve($child->getTemplate(), $this);
                     return $template->render((array) $child->getVariables());
                 }

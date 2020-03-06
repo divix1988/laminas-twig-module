@@ -19,7 +19,7 @@ class TwigResolver implements ResolverInterface
      *
      * @param Twig\Environment $environment
      */
-    public function __construct(Twig_Environment $environment)
+    public function __construct(\Twig\Environment $environment)
     {
         $this->environment = $environment;
     }
@@ -33,6 +33,13 @@ class TwigResolver implements ResolverInterface
      */
     public function resolve($name, Renderer $renderer = null)
     {
-        return $this->environment->loadTemplate($name);
+        return $this->environment->loadTemplate($this->getTemplateClass($name), $name);
+    }
+    
+    public function getTemplateClass(string $name): string
+    {
+        //$key = $this->getLoader()->getCacheKey($name).$this->optionsHash;
+
+        return '\LaminasTwig\View\TwigViewModel';//$this->templateClassPrefix.hash('sha256', $key).(null === $index ? '' : '___'.$index);
     }
 }

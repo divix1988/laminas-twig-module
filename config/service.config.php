@@ -10,6 +10,7 @@ return array(
         'LaminasTwigResolver'                => 'LaminasTwig\View\TwigResolver',
         'LaminasTwigViewHelperManager'       => 'LaminasTwig\View\HelperPluginManager',
         'LaminasTwigViewStrategy'            => 'LaminasTwig\View\TwigStrategy',
+        'TwigViewModel'                       => 'LaminasTwig\View\TwigViewModel'
     ),
 
     'factories' => array(

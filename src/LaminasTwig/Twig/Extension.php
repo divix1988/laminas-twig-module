@@ -2,10 +2,9 @@
 
 namespace LaminasTwig\Twig;
 
-use Twig\Extension;
 use LaminasTwig\View\TwigRenderer;
 
-class Extension extends Twig\Extension
+class Extension extends \Twig\Extension\AbstractExtension
 {
     /**
      * @var TwigRenderer

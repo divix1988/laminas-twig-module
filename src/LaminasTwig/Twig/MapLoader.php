@@ -6,7 +6,7 @@ use Twig\Error\Loader;
 use Twig\ExistsLoaderInterface;
 use Twig\LoaderInterface;
 
-class MapLoader implements Twig\ExistsLoaderInterface, Twig\LoaderInterface
+class MapLoader implements \Twig\Loader\LoaderInterface
 {
     /**
      * Array of templates to filenames.
@@ -31,6 +31,7 @@ class MapLoader implements Twig\ExistsLoaderInterface, Twig\LoaderInterface
             ));
         }
         $this->map[$name] = $path;
+        print_r($this->map);
         return $this;
     }
 
@@ -45,7 +46,7 @@ class MapLoader implements Twig\ExistsLoaderInterface, Twig\LoaderInterface
     /**
      * {@inheritDoc}
      */
-    public function getSource($name)
+    public function getSource($name):string
     {
         if (!$this->exists($name)) {
             throw new \Twig\Error\Loader(sprintf(
@@ -59,7 +60,7 @@ class MapLoader implements Twig\ExistsLoaderInterface, Twig\LoaderInterface
     /**
      * {@inheritDoc}
      */
-    public function getCacheKey($name)
+    public function getCacheKey($name):string
     {
         return $name;
     }
@@ -67,8 +68,28 @@ class MapLoader implements Twig\ExistsLoaderInterface, Twig\LoaderInterface
     /**
      * {@inheritDoc}
      */
-    public function isFresh($name, $time)
+    public function isFresh($name, $time):bool
     {
         return filemtime($this->map[$name]) <= $time;
     }
+
+    public function getSourceContext($name):\Twig\Source
+    {
+        $source = $this->map[$name];
+
+        if (!isset($this->map[$name])) {
+            throw new \Twig\Error\LoaderError(sprintf('Template "%s" is not defined.', $name));
+        }
+        //exit('aa');
+        return new \Twig\Source($source, $name);
+        /*if (!$this->exists($name)) {
+            throw new \Twig\Error\Loader(sprintf(
+                'Unable to find template "%s" from template map',
+                $name
+            ));
+        }
+    
+        return new \Twig\Source("", $name, "");*/
+    }
+
 }
